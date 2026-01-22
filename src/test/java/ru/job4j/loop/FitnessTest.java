@@ -34,7 +34,7 @@ class FitnessTest {
     @Test
     void whenIvanEqualsNik() {
         int ivan = 90;
-        int nik = 9;
+        int nik = 90;
         int result = Fitness.calc(ivan, nik);
         int expected = 1;
         assertThat(result).isEqualTo(expected);
