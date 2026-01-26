@@ -87,4 +87,26 @@ class FindLoopTest {
         int expected = 4;
         assertThat(result).isEqualTo(expected);
     }
+
+    @Test
+    public void whenArray0ThenMinus1() {
+        int[] data = new int[]{};
+        int element = 8;
+        int start = 1;
+        int finish = 8;
+        int result = FindLoop.indexInRange(data, element, start, finish);
+        int expected = -1;
+        assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    public void whenStartMoreThanFinishThenMinus1() {
+        int[] data = new int[]{1, 2, 3, 4};
+        int element = 1;
+        int start = 3;
+        int finish = 0;
+        int result = FindLoop.indexInRange(data, element, start, finish);
+        int expected = -1;
+        assertThat(result).isEqualTo(expected);
+    }
 }
