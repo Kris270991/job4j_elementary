@@ -120,4 +120,15 @@ class FindLoopTest {
         int expected = 1;
         assertThat(result).isEqualTo(expected);
     }
+
+    @Test
+    public void whenFinishMoreLastIndexThenMinus1() {
+        int[] data = new int[]{2, 5, 3, 4};
+        int element = 5;
+        int start = 1;
+        int finish = 4;
+        int result = FindLoop.indexInRange(data, element, start, finish);
+        int expected = -1;
+        assertThat(result).isEqualTo(expected);
+    }
 }
