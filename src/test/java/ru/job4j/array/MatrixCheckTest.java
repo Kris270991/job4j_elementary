@@ -23,10 +23,34 @@ public class MatrixCheckTest {
                 {' ', ' ', ' ', ' '},
                 {'X', 'X', 'X', ' '},
                 {' ', ' ', ' ', ' '},
-                {' '},
+                {' ', 'X', 'X', 'X'},
         };
-        int row = 1;
+        int row = 3;
         boolean result = MatrixCheck.monoHorizontal(input, row);
+        assertThat(result).isFalse();
+    }
+
+    @Test
+    public void whenHasMonoVertical() {
+        char[][] input = {
+                {' ', ' ', 'X'},
+                {' ', ' ', 'X'},
+                {' ', ' ', 'X'},
+        };
+        int column = 2;
+        boolean result = MatrixCheck.monoVertical(input, column);
+        assertThat(result).isTrue();
+    }
+
+    @Test
+    public void whenHasnotMonoVertical() {
+        char[][] input = {
+                {'X', ' ', 'X'},
+                {'X', ' ', 'X'},
+                {' ', ' ', 'X'},
+        };
+        int column = 0;
+        boolean result = MatrixCheck.monoVertical(input, column);
         assertThat(result).isFalse();
     }
 }
