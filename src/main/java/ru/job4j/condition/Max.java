@@ -1,13 +1,18 @@
 package ru.job4j.condition;
 
 public class Max {
+    public static int findMax(int a, int b) {
+        int max = (a > b) ? a : b;
+        return max;
+    }
+
     public static int findMax(int a, int b, int c) {
-        int max = (a > b) ? ((a > c) ? a : c) : ((b > c) ? b : c);
+        int max = findMax(a, b) > c ? findMax(a, b) : c;
         return max;
     }
 
     public static int findMax(int a, int b, int c, int d) {
-        int max = findMax(a, b, c) < d ? d : findMax(a, b, c);
+        int max = findMax(a, b) > findMax(c, d) ? findMax(a, b) : findMax(c, d);
         return max;
     }
 
